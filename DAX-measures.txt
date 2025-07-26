@@ -1,0 +1,17 @@
+-- Total Sales
+Total Sales = SUM(Sales[Sales])
+
+-- Total Profit
+Total Profit = SUM(Sales[Profit])
+
+-- Profit Margin
+Profit Margin = DIVIDE([Total Profit], [Total Sales])
+
+-- Average Order Value
+Average Order Value = AVERAGE(Sales[Sales])
+
+-- Sales by Region
+Sales by Region = SUMMARIZE(Sales, Sales[Region], "Total Sales", [Total Sales])
+
+-- Top 5 Products
+Top Products = TOPN(5, SUMMARIZE(Sales, Sales[Sub-Category], "Total", [Total Sales]), [Total Sales], DESC)
